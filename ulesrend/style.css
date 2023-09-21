@@ -1,0 +1,34 @@
+table{
+    border: 1px solid black;
+    padding-top: 10px;
+    width: 100%;
+    height: 350%;
+}
+
+
+td{
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 120px;
+    height: 60px;
+    margin-top: 20px;
+}
+
+.tanulo{
+    background-color: forestgreen;
+}
+
+.tanar{
+    background-color: chartreuse;
+}
+
+.emptyCell{
+    visibility:hidden;
+}
+
+.tolto{
+    width: 100%;
+    height: 50%;
+    border: 0px;
+}
+
