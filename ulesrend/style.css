@@ -32,3 +32,12 @@ td{
     border: 0px;
 }
 
+a{
+    text-decoration:double;
+}
+
+.msg_warning{
+    color: red;
+}
+
+
