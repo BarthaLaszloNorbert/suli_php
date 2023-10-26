@@ -14,6 +14,12 @@ td{
     margin-top: 20px;
 }
 
+img.pp{
+    
+    border-radius: 8px;
+    width: 50%;
+    
+}
 .tanulo{
     background-color: forestgreen;
 }
@@ -24,6 +30,10 @@ td{
 
 .emptyCell{
     visibility:hidden;
+}
+
+.meme{
+    background-color:rgb(0, 255, 64);
 }
 
 .tolto{

@@ -66,3 +66,69 @@ print "<pre>";
 		</table>
 	</div>
 -->
+
+
+
+		while($row = $result->fetch_assoc()) {
+			if($row["sor"] != $sorId) {
+				if($sorId != NULL) echo "		</tr>";
+				echo "		<tr>";
+				$sorId = $row["sor"];
+			}
+
+			
+
+
+			$kiiras = '<td class = "tanulo"><a href="index.php?id='.$row["id"].'">'.$row['nev'].'</a>';
+
+			if($row['sor']==3 && $row['oszlop']==3) {
+				for($i = 0; $i<3; $i++){
+					echo '<td class = "emptyCell">';
+				}
+				echo $kiiras;
+				echo '<td class = "emptyCell">';
+			} elseif($row['sor']<3 && $row['oszlop']==4 ){
+				if($row['sor']==2){
+					echo '<td class = "emptyCell">';	
+				}
+				echo '<td class = "emptyCell">';
+				echo $kiiras;
+			} elseif($row['sor']==1 && $row['oszlop']==1 ){
+				echo '<td class = "meme"><a href="index.php?id='.$row["id"].'">'.$row['nev'].'</a>';
+			}else{
+				echo $kiiras;
+			}
+
+			if($row['sor']==0) {
+				if($row['oszlop']==0){
+					echo '<td rowspan="4" class="tolto" style="width: 40px;">';
+				}
+			}
+		
+			if(isset($_GET['id'])){
+				if($row["id"] == $_GET['id']){
+					$modosoitandoNev = $row["nev"];
+				}
+			}
+			//van-e profilkép?
+			$imgExtensions = array('jpg','jpeg','png','gif');
+			$img = FALSE;
+			foreach($imgExtensions as $ext){
+				$imgFile = $target_dir.$row["id"].".".$ext;
+				if(file_exists($imgFile)){
+					echo "létezik: $imgFile ";
+					$img = '<img src="'.$imgFile.'"><br>';
+				}
+			}
+
+			if($img){
+				echo $img;
+			}
+
+			//Sor lezárás
+			echo '</td>';
+		}
+		echo "		</tr>";
+		echo '</table>';
+		}
+	?>
