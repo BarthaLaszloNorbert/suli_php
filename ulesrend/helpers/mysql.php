@@ -3,8 +3,8 @@
 class DataBase {
 
   private $servername = "localhost";
-  private $username = "phpteszt";
-  private $password = "iyD(VcxgbZ.6Pp]*";
+  private $username = "lacko";
+  private $password = "qfFqqa4mSm83aqad";
   private $db = "ulesrend";
   public static $conn;
 
